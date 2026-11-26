@@ -1,12 +1,18 @@
 # LeetCode Learning Progress
 
-This repository records my LeetCode practice in the order I solved the problems. Each solution includes beginner-friendly notes about the idea and the C++ implementation.
+I am learning C++ and DSA from the beginning alongside the Love Babbar Complete C++ Placement DSA Course. This section tracks problems completed as part of that learning path, starting from zero.
 
-## Progress
+## Beginner track
 
 | Order | Problem | Difficulty | Solution |
 |---:|---|---|---|
-| 1 | [3568. Minimum Moves to Clean the Classroom](https://leetcode.com/problems/minimum-moves-to-clean-the-classroom/) | Medium | [C++ solution and notes](solutions/03568-minimum-moves-to-clean-the-classroom.md) |
-| 2 | [1. Two Sum](https://leetcode.com/problems/two-sum/) | Easy | [C++ solution and notes](solutions/00001-two-sum.md) |
+| 1 | [2235. Add Two Integers](https://leetcode.com/problems/add-two-integers/) | Easy | [C++ solution and notes](solutions/02235-add-two-integers.md) |
 
-More problems will be added as I work through them.
+## Earlier practice notes
+
+These notes were added before the structured beginner track and do not count toward its progress:
+
+- [3568. Minimum Moves to Clean the Classroom](solutions/03568-minimum-moves-to-clean-the-classroom.md)
+- [1. Two Sum](solutions/00001-two-sum.md)
+
+We will add each new solution to the beginner track after understanding and completing it together.
