@@ -7,6 +7,7 @@ I am learning C++ and DSA from the beginning alongside the Love Babbar Complete 
 | Order | Problem | Difficulty | Solution |
 |---:|---|---|---|
 | 1 | [2235. Add Two Integers](https://leetcode.com/problems/add-two-integers/) | Easy | [C++ solution and notes](solutions/02235-add-two-integers.md) |
+| 2 | [412. Fizz Buzz](https://leetcode.com/problems/fizz-buzz/) | Easy | [C++ solution and notes](solutions/00412-fizz-buzz.md) |
 
 ## Earlier practice notes
 
