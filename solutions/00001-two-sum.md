@@ -2,31 +2,75 @@
 
 [LeetCode problem](https://leetcode.com/problems/two-sum/) · Easy · C++
 
-## Restate the task
+## What the question asks
 
-Given an integer array `nums` and a target number, return the indices of two different numbers whose sum equals the target. The problem guarantees exactly one answer.
+You receive an integer array `nums` and an integer `target`. Find two different array positions whose values add up to `target`. Return the positions (indices), not the values.
 
-For example, with `nums = [2, 7, 11, 15]` and `target = 9`, the answer is `[0, 1]`, because `nums[0] + nums[1] = 2 + 7 = 9`.
+Example: in `[3, 2, 4]`, the values `2` and `4` are at indices `1` and `2`. They add to `6`, so for target `6` we return `[1, 2]`.
 
-## First idea: check every pair
+Array indices start at zero. You cannot use the same index twice. The problem guarantees one answer.
 
-A simple solution uses two loops. For each number, compare it with every number after it. This is easy to understand, but it can take about `n * n` checks.
+## Approach 1: Check every pair
 
-## Faster idea: remember what we have seen
-
-As we scan left to right, for each number `x`, ask: “What number would complete the target?” That missing number is `target - x`.
-
-Store previously seen values and their indices in a hash map:
-
-1. Calculate the needed partner: `target - nums[i]`.
-2. If the partner is already in the map, return its index and `i`.
-3. Otherwise, save `nums[i]` and its index for later.
-
-We check the map before inserting the current value, so an element is never paired with itself.
-
-## C++ solution
+This is the simplest idea: pick one number, then check each number after it. If their sum equals the target, return their indices.
 
 ```cpp
+#include <vector>
+using namespace std;
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        for (int i = 0; i < nums.size(); ++i) {
+            for (int j = i + 1; j < nums.size(); ++j) {
+                if (nums[i] + nums[j] == target) {
+                    return {i, j};
+                }
+            }
+        }
+
+        return {}; // The problem guarantees that an answer exists.
+    }
+};
+```
+
+### How the loops work
+
+- The outer loop chooses the first index, `i`.
+- The inner loop checks later indices, `j`.
+- Starting `j` at `i + 1` prevents using the same array element twice and avoids checking the same pair again in reverse.
+- When the two values add to the target, `{i, j}` is the answer.
+
+For `nums = [3, 2, 4]` and `target = 6`, the pairs are:
+
+| Indices | Values | Sum |
+|---|---|---:|
+| `(0, 1)` | `3 + 2` | 5 |
+| `(0, 2)` | `3 + 4` | 7 |
+| `(1, 2)` | `2 + 4` | 6 |
+
+The last pair works, so return `[1, 2]`.
+
+This approach is useful for learning nested loops. It takes `O(n²)` time in the worst case, so we can improve it.
+
+## Approach 2: Use a hash map for a faster search
+
+For each value `x`, the partner we need is `target - x`. For example, if the target is `6` and `x` is `2`, we need `4`.
+
+An `unordered_map` can remember values we have already passed and the indices where we found them. At each position:
+
+1. Calculate the needed partner.
+2. Look for that partner among the values already seen.
+3. If found, return the saved index and the current index.
+4. Otherwise, save the current value and index for later.
+
+We look in the map before saving the current value. This ensures we do not pair an element with itself.
+
+```cpp
+#include <vector>
+#include <unordered_map>
+using namespace std;
+
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -35,7 +79,7 @@ public:
         for (int i = 0; i < nums.size(); ++i) {
             int needed = target - nums[i];
 
-            if (indexOf.count(needed)) {
+            if (indexOf.count(needed) > 0) {
                 return {indexOf[needed], i};
             }
 
@@ -47,18 +91,36 @@ public:
 };
 ```
 
-## Walkthrough
+### Dry run of the faster approach
 
-For `nums = [2, 7, 11, 15]` and `target = 9`:
+Input: `nums = [3, 2, 4]`, `target = 6`
 
-- At index 0, the value is 2. We need `9 - 2 = 7`. We have not seen 7, so remember that 2 is at index 0.
-- At index 1, the value is 7. We need `9 - 7 = 2`. The map has 2 at index 0, so return `[0, 1]`.
+| Index `i` | Current value | Needed value (`target - current`) | Values remembered before this step | Action |
+|---:|---:|---:|---|---|
+| 0 | 3 | 3 | none | 3 is not remembered; save `3 -> 0` |
+| 1 | 2 | 4 | `3 -> 0` | 4 is not remembered; save `2 -> 1` |
+| 2 | 4 | 2 | `3 -> 0, 2 -> 1` | 2 is at index 1; return `[1, 2]` |
 
-## Complexity
+### What the map stores
 
-- Time: `O(n)` on average, because each hash-map lookup and insert is average constant time.
-- Space: `O(n)` in the worst case, because we may store most of the array.
+For this problem, `unordered_map<int, int>` means:
 
-## What to remember
+- The first `int` is an array value.
+- The second `int` is the index where that value appeared.
 
-When a pair must add up to a target, try rewriting the condition as a lookup for the complement: `target - current value`. A hash map helps find that complement quickly.
+For example, `indexOf[2] = 1` means “the value 2 was found at index 1.”
+
+## Complexity comparison
+
+Let `n` be the number of values.
+
+| Approach | Time | Extra space |
+|---|---:|---:|
+| Check every pair | `O(n²)` | `O(1)` |
+| Hash map | `O(n)` average | `O(n)` |
+
+The hash-map version is faster on average because it avoids scanning the rest of the array for every value.
+
+## Key idea to remember
+
+When you need a pair that adds to a target, calculate the missing partner with `target - currentValue`. A hash map lets you quickly check whether that partner has already appeared.
