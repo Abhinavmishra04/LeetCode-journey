@@ -9,6 +9,7 @@ I am learning C++ and DSA from the beginning alongside the Love Babbar Complete 
 | 1 | [2235. Add Two Integers](https://leetcode.com/problems/add-two-integers/) | Easy | [C++ solution and notes](solutions/02235-add-two-integers.md) |
 | 2 | [412. Fizz Buzz](https://leetcode.com/problems/fizz-buzz/) | Easy | [C++ solution and notes](solutions/00412-fizz-buzz.md) |
 | 3 | [1281. Subtract the Product and Sum of Digits of an Integer](https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/) | Easy | [C++ solution and notes](solutions/01281-subtract-product-and-sum.md) |
+| 4 | [191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) | Easy | [C++ solution and notes](solutions/00191-number-of-1-bits.md) |
 
 ## Earlier practice notes
 
