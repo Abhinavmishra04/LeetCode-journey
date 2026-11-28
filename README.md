@@ -3,7 +3,7 @@
 A record of my problem-solving practice, concepts learned, and solutions.
 
 **Current language:** Java  
-**Starting point:** Beginner
+**Learning path:** Building from fundamentals toward advanced problem solving.
 
 ## Completed Problems
 
