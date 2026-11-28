@@ -1,6 +1,6 @@
 # LeetCode Learning Progress
 
-I am learning C++ and DSA from the beginning alongside the Love Babbar Complete C++ Placement DSA Course. This section tracks problems completed as part of that learning path, starting from zero.
+I am learning C++ and DSA from the beginning alongside Love Babbar's [Complete C++ Placement DSA Course](https://www.youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA). This section tracks problems completed as part of that learning path, starting from zero.
 
 ## Beginner track
 
