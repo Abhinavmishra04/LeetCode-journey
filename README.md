@@ -1,21 +1,22 @@
-# LeetCode Learning Progress
+# LeetCode DSA Progress
 
-I am learning C++ and DSA from the beginning alongside Love Babbar's [Complete C++ Placement DSA Course](https://www.youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA). This section tracks problems completed as part of that learning path, starting from zero.
+A record of my problem-solving practice, concepts learned, and solutions.
 
-## Beginner track
+**Current language:** Java  
+**Starting point:** Beginner
 
-| Order | Problem | Difficulty | Solution |
-|---:|---|---|---|
-| 1 | [2235. Add Two Integers](https://leetcode.com/problems/add-two-integers/) | Easy | [C++ solution and notes](solutions/02235-add-two-integers.md) |
-| 2 | [412. Fizz Buzz](https://leetcode.com/problems/fizz-buzz/) | Easy | [C++ solution and notes](solutions/00412-fizz-buzz.md) |
-| 3 | [1281. Subtract the Product and Sum of Digits of an Integer](https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/) | Easy | [C++ solution and notes](solutions/01281-subtract-product-and-sum.md) |
-| 4 | [191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) | Easy | [C++ solution and notes](solutions/00191-number-of-1-bits.md) |
+## Completed Problems
 
-## Earlier practice notes
+| # | Problem | Difficulty | Language | Solution |
+|---:|---|---|---|---|
+| 1 | [2235. Add Two Integers](https://leetcode.com/problems/add-two-integers/) | Easy | Java | [Solution and notes](solutions/02235-add-two-integers.md) |
+| 2 | [412. Fizz Buzz](https://leetcode.com/problems/fizz-buzz/) | Easy | C++ | [Solution and notes](solutions/00412-fizz-buzz.md) |
+| 3 | [1281. Subtract the Product and Sum of Digits of an Integer](https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/) | Easy | C++ | [Solution and notes](solutions/01281-subtract-product-and-sum.md) |
+| 4 | [191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) | Easy | C++ | [Solution and notes](solutions/00191-number-of-1-bits.md) |
 
-These notes were added before the structured beginner track and do not count toward its progress:
+Java will be used for new solutions going forward.
 
-- [3568. Minimum Moves to Clean the Classroom](solutions/03568-minimum-moves-to-clean-the-classroom.md)
+## Additional Practice
+
 - [1. Two Sum](solutions/00001-two-sum.md)
-
-We will add each new solution to the beginner track after understanding and completing it together.
+- [3568. Minimum Moves to Clean the Classroom](solutions/03568-minimum-moves-to-clean-the-classroom.md)
